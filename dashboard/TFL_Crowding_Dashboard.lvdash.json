@@ -1,0 +1,519 @@
+{
+  "datasets": [
+    {
+      "name": "6225c651",
+      "displayName": "crowd_metrics",
+      "queryLines": [
+        "SELECT * FROM crowd_metrics"
+      ],
+      "catalog": "tfl_crowding_analysis_we",
+      "schema": "tfl_crowd"
+    }
+  ],
+  "pages": [
+    {
+      "name": "445d8ae2",
+      "displayName": "Overview",
+      "layout": [
+        {
+          "widget": {
+            "name": "crowd-metrics-over-time",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "6225c651",
+                  "fields": [
+                    {
+                      "name": "commonName",
+                      "expression": "`commonName`"
+                    },
+                    {
+                      "name": "timeLocal",
+                      "expression": "`timeLocal`"
+                    },
+                    {
+                      "name": "avg(percentageOfBaseline)",
+                      "expression": "AVG(`percentageOfBaseline`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "line",
+              "encodings": {
+                "x": {
+                  "fieldName": "timeLocal",
+                  "scale": {
+                    "type": "temporal"
+                  }
+                },
+                "y": {
+                  "fieldName": "avg(percentageOfBaseline)",
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                },
+                "color": {
+                  "fieldName": "commonName",
+                  "scale": {
+                    "type": "categorical"
+                  }
+                }
+              },
+              "frame": {
+                "title": "Crowd Metrics Over Time",
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 7,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "average-percentage-baseline-common-name",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "6225c651",
+                  "fields": [
+                    {
+                      "name": "commonName",
+                      "expression": "`commonName`"
+                    },
+                    {
+                      "name": "avg(percentageOfBaseline)",
+                      "expression": "AVG(`percentageOfBaseline`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "commonName",
+                  "scale": {
+                    "type": "categorical"
+                  }
+                },
+                "y": {
+                  "fieldName": "avg(percentageOfBaseline)",
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                }
+              },
+              "frame": {
+                "showTitle": false,
+                "showDescription": false
+              },
+              "mark": {
+                "colors": [
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 2
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 2
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 5
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 6
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 7
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 8
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 10
+                  }
+                ]
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 1,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "cfcd165b",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "6225c651",
+                  "fields": [
+                    {
+                      "name": "avg(percentageOfBaseline)",
+                      "expression": "AVG(`percentageOfBaseline`)"
+                    },
+                    {
+                      "name": "day",
+                      "expression": "`day`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "avg(percentageOfBaseline)",
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                },
+                "y": {
+                  "fieldName": "day",
+                  "scale": {
+                    "type": "categorical"
+                  }
+                }
+              },
+              "mark": {
+                "colors": [
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 7
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 2
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 5
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 6
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 7
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 8
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 10
+                  }
+                ]
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 1,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "crowd-metrics-counter",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "6225c651",
+                  "fields": [
+                    {
+                      "name": "daily(timeLocal)",
+                      "expression": "DATE_TRUNC(\"DAY\", `timeLocal`)"
+                    },
+                    {
+                      "name": "avg(percentageOfBaseline)",
+                      "expression": "AVG(`percentageOfBaseline`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "line",
+              "encodings": {
+                "x": {
+                  "fieldName": "daily(timeLocal)",
+                  "scale": {
+                    "type": "temporal"
+                  }
+                },
+                "y": {
+                  "fieldName": "avg(percentageOfBaseline)",
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                }
+              },
+              "frame": {
+                "title": "Crowd Metrics Over Time",
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 7,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "number-of-stations",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "6225c651",
+                  "fields": [
+                    {
+                      "name": "countdistinct(commonName)",
+                      "expression": "COUNT(DISTINCT `commonName`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "countdistinct(commonName)"
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "# of Stations"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 2,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "avg-crow",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "6225c651",
+                  "fields": [
+                    {
+                      "name": "avg(percentageOfBaseline)",
+                      "expression": "AVG(`percentageOfBaseline`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "avg(percentageOfBaseline)"
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "#Crowding Level"
+              }
+            }
+          },
+          "position": {
+            "x": 2,
+            "y": 0,
+            "width": 2,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "number-of-rows",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "6225c651",
+                  "fields": [
+                    {
+                      "name": "count(naptonId)",
+                      "expression": "COUNT(`naptonId`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "count(naptonId)"
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "# of Rows"
+              }
+            }
+          },
+          "position": {
+            "x": 4,
+            "y": 0,
+            "width": 2,
+            "height": 1
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    },
+    {
+      "name": "97a48db9",
+      "displayName": "Global Filters",
+      "layout": [
+        {
+          "widget": {
+            "name": "underground-tube-name",
+            "queries": [
+              {
+                "name": "dashboards/01f0befc42691d498e83aa83e692e206/datasets/01f0befc51ab13f391d360b8a3ad0be6_commonName",
+                "query": {
+                  "datasetName": "6225c651",
+                  "fields": [
+                    {
+                      "name": "commonName",
+                      "expression": "`commonName`"
+                    },
+                    {
+                      "name": "commonName_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-single-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "commonName",
+                    "queryName": "dashboards/01f0befc42691d498e83aa83e692e206/datasets/01f0befc51ab13f391d360b8a3ad0be6_commonName"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Underground Tube Name"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "a7d77281",
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-single-select",
+              "encodings": {},
+              "frame": {
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 2,
+            "width": 1,
+            "height": 2
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_GLOBAL_FILTERS"
+    }
+  ],
+  "uiSettings": {
+    "theme": {
+      "widgetHeaderAlignment": "ALIGNMENT_UNSPECIFIED"
+    },
+    "applyModeEnabled": false
+  }
+}
