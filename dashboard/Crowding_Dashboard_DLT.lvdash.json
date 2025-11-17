@@ -1,0 +1,296 @@
+{
+  "datasets": [
+    {
+      "name": "5d5c0ef3",
+      "displayName": "crowd_napton_gold",
+      "queryLines": [
+        "SELECT * FROM tfl_crowding_analysis_we.gold.crowd_napton_gold"
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "name": "1c069459",
+      "displayName": "Overview",
+      "layout": [
+        {
+          "widget": {
+            "name": "number-of-rows",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "5d5c0ef3",
+                  "fields": [
+                    {
+                      "name": "count(*)",
+                      "expression": "COUNT(`*`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "count(*)"
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Number of Rows"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 2,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "7165ae62",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "5d5c0ef3",
+                  "fields": [
+                    {
+                      "name": "countdistinct(commonName)",
+                      "expression": "COUNT(DISTINCT `commonName`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "countdistinct(commonName)"
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Number of Stations"
+              }
+            }
+          },
+          "position": {
+            "x": 2,
+            "y": 0,
+            "width": 2,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "aa2ac1b1",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "5d5c0ef3",
+                  "fields": [
+                    {
+                      "name": "max(timeLocal)",
+                      "expression": "MAX(`timeLocal`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "max(timeLocal)"
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Latest Data Feed"
+              }
+            }
+          },
+          "position": {
+            "x": 4,
+            "y": 0,
+            "width": 2,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "crowding-over-week",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "5d5c0ef3",
+                  "fields": [
+                    {
+                      "name": "monthly(timeLocal)",
+                      "expression": "DATE_TRUNC(\"MONTH\", `timeLocal`)"
+                    },
+                    {
+                      "name": "avg(percentageOfBaseline)",
+                      "expression": "AVG(`percentageOfBaseline`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "monthly(timeLocal)",
+                  "scale": {
+                    "type": "temporal"
+                  }
+                },
+                "y": {
+                  "fieldName": "avg(percentageOfBaseline)",
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Crowding Over Week"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 2,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "e1e47763",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "5d5c0ef3",
+                  "fields": [
+                    {
+                      "name": "bin(percentageOfBaseline, binWidth=5)",
+                      "expression": "BIN_FLOOR(`percentageOfBaseline`, 5)"
+                    },
+                    {
+                      "name": "countdistinct(commonName)",
+                      "expression": "COUNT(DISTINCT `commonName`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "histogram",
+              "encodings": {
+                "x": {
+                  "fieldName": "bin(percentageOfBaseline, binWidth=5)",
+                  "scale": {
+                    "type": "categorical"
+                  }
+                },
+                "y": {
+                  "fieldName": "countdistinct(commonName)",
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 8,
+            "width": 6,
+            "height": 6
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    },
+    {
+      "name": "00cc8afc",
+      "displayName": "Global Filters",
+      "layout": [
+        {
+          "widget": {
+            "name": "tube-station-name",
+            "queries": [
+              {
+                "name": "dashboards/01f0c3ca9cb713f28d11a254fe4ee2cb/datasets/01f0c3cabc4213388224ae0062ca7001_commonName",
+                "query": {
+                  "datasetName": "5d5c0ef3",
+                  "fields": [
+                    {
+                      "name": "commonName",
+                      "expression": "`commonName`"
+                    },
+                    {
+                      "name": "commonName_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-single-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "commonName",
+                    "queryName": "dashboards/01f0c3ca9cb713f28d11a254fe4ee2cb/datasets/01f0c3cabc4213388224ae0062ca7001_commonName"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Tube Station Name"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_GLOBAL_FILTERS"
+    }
+  ],
+  "uiSettings": {
+    "theme": {
+      "widgetHeaderAlignment": "ALIGNMENT_UNSPECIFIED"
+    },
+    "applyModeEnabled": false
+  }
+}
