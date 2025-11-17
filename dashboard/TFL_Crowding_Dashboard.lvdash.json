@@ -493,7 +493,9 @@
             "spec": {
               "version": 2,
               "widgetType": "filter-single-select",
-              "encodings": {},
+              "encodings": {
+                "fields": []
+              },
               "frame": {
                 "showTitle": true
               }

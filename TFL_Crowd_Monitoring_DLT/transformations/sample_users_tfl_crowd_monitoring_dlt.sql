@@ -2,7 +2,7 @@
 -- Edit the sample below or add new transformations
 -- using "+ Add" in the file browser.
 
-CREATE OR REFRESH MATERIALIZED VIEW sample_users_nov_14_1633 AS
+CREATE OR REFRESH MATERIALIZED VIEW sample_users_tfl_crowd_monitoring_dlt AS
 SELECT
     user_id,
     email,

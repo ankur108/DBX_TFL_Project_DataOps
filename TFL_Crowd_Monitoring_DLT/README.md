@@ -1,6 +1,6 @@
-# New Pipeline 2025-11-14 16:33
+# TFL_Crowd_Monitoring_DLT
 
-This folder defines all source code for the 'New Pipeline 2025-11-14 16:33' pipeline:
+This folder defines all source code for the 'TFL_Crowd_Monitoring_DLT' pipeline:
 
 - `explorations`: Ad-hoc notebooks used to explore the data processed by this pipeline.
 - `transformations`: All dataset definitions and transformations.
@@ -10,7 +10,7 @@ This folder defines all source code for the 'New Pipeline 2025-11-14 16:33' pipe
 To get started, go to the `transformations` folder -- most of the relevant source code lives there:
 
 * By convention, every dataset under `transformations` is in a separate file.
-* Take a look at the sample under "sample_users_nov_14_1633.sql" to get familiar with the syntax.
+* Take a look at the sample under "sample_users_tfl_crowd_monitoring_dlt.sql" to get familiar with the syntax.
   Read more about the syntax at https://docs.databricks.com/dlt/sql-ref.html.
 * Use `Run file` to run and preview a single transformation.
 * Use `Run pipeline` to run _all_ transformations in the entire pipeline.
