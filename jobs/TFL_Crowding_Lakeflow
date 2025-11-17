@@ -1,0 +1,17 @@
+resources:
+  jobs:
+    TFL_Crowding_Lakeflow:
+      name: TFL_Crowding_Lakeflow
+      email_notifications:
+        on_failure:
+          - rattan-bunting0f@icloud.com
+        no_alert_for_skipped_runs: true
+      schedule:
+        quartz_cron_expression: 18 0/15 * * * ?
+        timezone_id: UTC
+        pause_status: UNPAUSED
+      tasks:
+        - task_key: pipeline-task-80cec960-80d5-44b0-9c02-0f8f48ef2e74
+          pipeline_task:
+            pipeline_id: 80cec960-80d5-44b0-9c02-0f8f48ef2e74
+      performance_target: PERFORMANCE_OPTIMIZED
